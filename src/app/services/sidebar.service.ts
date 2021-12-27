@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,9 @@ export class SidebarService {
         { titulo: 'Main', url: '/' },
         { titulo: 'ProgressBar', url: 'progress' },
         { titulo: 'Greafica', url: 'grafica1' },
+        { titulo: 'Promesas', url: 'promesa' },
+        { titulo: 'Reactivo', url: 'rxjs' },
       ],
     },
-  ]
+  ];
 }

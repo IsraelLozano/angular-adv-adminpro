@@ -11,6 +11,8 @@ import { ComponentsModule } from '../components/components.module'
 
 import { NgChartsModule } from 'ng2-charts'
 import { AccountSettingsComponent } from './account-settings/account-settings.component'
+import { PromesaComponent } from './promesa/promesa.component';
+import { RxjsComponent } from './rxjs/rxjs.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     GraficalComponent,
     PagesComponent,
     AccountSettingsComponent,
+    PromesaComponent,
+    RxjsComponent,
   ],
   exports: [
     DashboardComponent,
