@@ -9,11 +9,13 @@ import { NgModule } from '@angular/core';
 
 import { Routes } from '@angular/router';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
