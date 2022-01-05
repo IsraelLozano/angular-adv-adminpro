@@ -12,17 +12,29 @@
             class="has-arrow waves-effect waves-dark"
             href="#"
             aria-expanded="false"
-            ><img src="./assets/images/users/profile.png" alt="user" /><span
-              class="hide-menu"
-              >Steave Jobs
-            </span></a
           >
+            <img [src]="usuario?.imageUrl" alt="user" />
+            <span class="hide-menu">
+              {{ usuario.nombre | slice: 0:18 }}
+              {{ usuario.nombre.length >= 18 ? '...' : '' }}
+            </span>
+          </a>
           <ul aria-expanded="false" class="collapse">
-            <li><a href="javascript:void()">My Profile </a></li>
-            <li><a href="javascript:void()">My Balance</a></li>
-            <li><a href="javascript:void()">Inbox</a></li>
             <li>
-              <a routerLink="account-settings">Account Setting</a>
+              <a routerLinkActive="active" routerLink="./perfil">My Profile</a>
+            </li>
+            <li>
+              <a routerLinkActive="active" href="javascript:void()">
+                My Balance
+              </a>
+            </li>
+            <li>
+              <a routerLinkActive="active" href="javascript:void()">Inbox</a>
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="account-settings">
+                Account Setting
+              </a>
             </li>
             <li><a routerLink="/login">Logout</a></li>
           </ul>
@@ -34,21 +46,23 @@
             class="has-arrow waves-effect waves-dark"
             href="#"
             aria-expanded="false"
-            ><i class="mdi mdi-gauge"></i
-            ><span class="hide-menu"
-              >{{ item.titulo }}
-              <span class="label label-rouded label-themecolor pull-right">{{
-                item.subMenu.length
-              }}</span></span
-            ></a
           >
+            <i class="mdi mdi-gauge"></i>
+            <span class="hide-menu">
+              {{ item.titulo }}
+              <span class="label label-rouded label-themecolor pull-right">
+                {{ item.subMenu.length }}
+              </span>
+            </span>
+          </a>
           <ul aria-expanded="false" class="collapse">
             <li *ngFor="let subItem of item.subMenu">
               <a
                 [routerLink]="subItem.url"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
-                >{{ subItem.titulo }}
+              >
+                {{ subItem.titulo }}
               </a>
             </li>
           </ul>

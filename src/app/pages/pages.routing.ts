@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { PerfilComponent } from './perfil/perfil.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +44,11 @@ export const routes: Routes = [
         data: { titulo: 'Promesas' },
       },
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
+      {
+        path: 'perfil',
+        component: PerfilComponent,
+        data: { titulo: 'Perfil de Usuario' },
+      },
       // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ],
   },
